@@ -91,8 +91,9 @@ public class SplashScreen extends CordovaPlugin {
 
         firstShow = false;
         loadSpinner();
-        showSplashScreen(true);
-    }
+//        showSplashScreen(true);
+        boolean hideAfterDelay = preferences.getBoolean("AutoHideSplashScreen", true);
+        showSplashScreen(hideAfterDelay);    }
 
     /**
      * Shorter way to check value of "SplashMaintainAspectRatio" preference.
@@ -107,7 +108,7 @@ public class SplashScreen extends CordovaPlugin {
             return;
         }
         // hide the splash screen to avoid leaking a window
-        this.removeSplashScreen();
+//        this.removeSplashScreen();
     }
 
     @Override
